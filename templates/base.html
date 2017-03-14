@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+    <head>
+        <title>{% block title %}Okie Life{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="shortcut icon" href="{% static 'images/main_logo.png' %}"/>
+    </head>
+{% endblock %}
+
+<body>
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-header">
+                    <a href="{% url 'root-index' %}" class="pull-left"><img src="{% static 'images/main_logo.png' %}"
+                                                                       style="height:50px;"></a>
+{#                    <a class="navbar-brand" href="{% url 'root-index' %}">Okie Life</a>#}
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="{% url 'cv-index' %}">CV</a></li>
+                    <li><a href="#">Family</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-2">
+                {% block leftnav %}{% endblock %}
+            </div>
+            <div class="col-md-10">
+                {% block content %}{% endblock %}
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <div class="col-md-6">
+                            {% block pagination %}
+                                {% if is_paginated %}
+                                    <div class="pagination">
+                                    <span class="page-links">
+                                         {% if page_obj.has_previous %}
+                                             <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">&#x226a;</a>
+                                         {% endif %}
+                                        <span class="page-current">
+                                             Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                         </span>
+                                        {% if page_obj.has_next %}
+                                            <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">&#x226b;</a>
+                                        {% endif %}
+                                    </span>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+
+</html>

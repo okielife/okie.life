@@ -1,0 +1,16 @@
+<table id="publications" class="table table-striped">
+    <tr>
+        <th>Authors</th>
+        <th>Year</th>
+        <th>Title</th>
+        <th>Conference, etc.</th>
+    </tr>
+    {% for pub in pubs %}
+    <tr>
+        <td>{{ pub.authors }}</td>
+        <td>{{ pub.year }}</td>
+        <td>{{ pub.title }}</td>
+        <td>{{ pub.container }}</td>
+    </tr>
+    {% endfor %}
+</table>

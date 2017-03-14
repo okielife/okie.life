@@ -1,0 +1,23 @@
+{% extends 'cv/cv_base.html' %}
+
+{% block content %}
+    {% include 'cv/index_content.html' %}
+    <hr>
+    <h3>Education</h3>
+    {% include 'cv/education_content.html' %}
+    <hr>
+    <h3>Work Experience</h3>
+    {% include 'cv/experience_content.html' %}
+    <hr>
+    <h3>Technical Skills</h3>
+    {% include 'cv/skills_content.html' %}
+    <hr>
+    <h3>Research Publications</h3>
+    {% include 'cv/publications_content.html' %}
+    <hr>
+    <h3>Memberships and Honors</h3>
+    {% include 'cv/memberships_content.html' %}
+    <hr>
+    <h3>Impact Projects</h3>
+    {% include 'cv/projects_content.html' %}
+{% endblock %}

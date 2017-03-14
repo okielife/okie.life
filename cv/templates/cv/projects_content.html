@@ -1,0 +1,8 @@
+{% for project, attribute_set in projects.iteritems %}
+<h4>{{ project }}</h4>
+<ul class="list-group">
+    {% for attr in attribute_set %}
+    <li class="list-group-item">{{ attr.description }}</li>
+    {% endfor %}
+</ul>
+{% endfor %}
