@@ -39,7 +39,8 @@ class Experience(models.Model):
     title = models.CharField(max_length=100, verbose_name="Job title")
     date = models.CharField(max_length=100, verbose_name="Descriptive time frame working for this company")
     company = models.CharField(max_length=100, verbose_name="Company name")
-    description = models.TextField(verbose_name="A description of job responsibilities, etc.")
+    json_description = models.TextField(verbose_name="A JSON string description of job responsibilities, etc.", null=True)
+    json_blob = None
 
 
 class Skill(models.Model):

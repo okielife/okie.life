@@ -1,11 +1,12 @@
-<h3>{{ person.name }}
+<h3>{{ person.name }}</h3>
+<p>
     {% if not sanitized %}
     <a href="mailto:{{ person.email }}">
-        <img border="0" alt="W3Schools" src="https://img.shields.io/badge/email-{% autoescape on %}{{ person.email }}{% endautoescape %}-lightgrey.svg?style=flat-square">
+        <img border="0" alt="W3Schools" src="https://img.shields.io/badge/email-{% autoescape on %}{{ person.email }}{% endautoescape %}-000000.svg?style=flat-square">
     </a>
     <a href="https://github.com/{{ person.github_id }}">
-        <img border="0" alt="W3Schools" src="https://img.shields.io/badge/github-%40{{ person.github_id }}-lightgrey.svg?style=flat-square">
+        <img border="0" alt="W3Schools" src="https://img.shields.io/badge/github-%40{{ person.github_id }}-000000.svg?style=flat-square">
     </a>
     {% endif %}
-</h3>
+</p>
 <p>{{ person.goal }}</p>

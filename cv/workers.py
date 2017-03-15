@@ -1,4 +1,9 @@
 from .models import Publication, Education, Person, Experience, Skill, MembershipItem, ProjectAttribute
+import json
+
+
+def json_to_string(obj):
+    return json.dumps(obj)
 
 
 def get_all():
@@ -129,30 +134,54 @@ def get_publications():
 
 def get_experience():
     jobs = list()
-    jobs.append(Experience(
+    e = Experience(
         title="Research Engineer, Multi-disciplinary",
         date="May 2013 - Present",
         company="National Renewable Energy Laboratory, Golden, CO",
-        description="Contributed to the Technology Performance Exchange (TPEx) via Data Entry Form development, dataset processing, and development of the logic and scripts to convert TPEx datasets into components on the Building Component Library Began leading technical development of EnergyPlus, overseeing the technical changes accompanying the translation from FORTRAN to C++, and StarTeam to GitHub",
-    ))
-    jobs.append(Experience(
+    )
+    e.json_blob = [
+        "Contributed to the Technology Performance Exchange, adding data entry forms for multiple technologies",
+        "Created the translator that converts TPEx datasets into components on the Building Component Library",
+        "Began leading technical development of EnergyPlus",
+        "Overseeing the technical changes accompanying the translation from FORTRAN to C++, and StarTeam to GitHub"
+    ]
+    jobs.append(e)
+
+    e = Experience(
         title="Graduate Research Assistant",
         date="January 2006 - May 2013",
         company="Oklahoma State University, Stillwater, OK",
-        description="A complete re-write of the EnergyPlus central plant simulation, including solution algorithms, pump model re-work, and updating component model design. Developed a generalized horizontal ground heat exchanger model that includes interaction with a basement zone, specifically for use with foundation heat exchangers. Performed experimental measurement and modeling of transport delay phenomena in piping systems. Worked closely with the Center for the Built Environment at University of California, Berkeley, providing simulation support for Underfloor Air Distribution System research with EnergyPlus.",
-    ))
-    jobs.append(Experience(
+    )
+    e.json_blob = [
+        "Designer of many aspects of the updated EnergyPlus central plant simulation",
+        "Developed a generalized horizontal ground heat exchanger model that includes zone thermal interaction",
+        "Performed experimental measurement and modeling of transport delay phenomena in piping systems",
+        "Provided simulation support for UFAD and internal mass cases to the Center for the Built Environment"
+    ]
+    jobs.append(e)
+
+    e = Experience(
         title="Engineering Consultant",
         date="Fall 2007, Summer 2009",
         company="Oak Ridge National Laboratory, Oak Ridge, TN",
-        description="Utilized EnergyPlus to investigate wall constructions for residential applications. Constructions included frame walls, solid wood walls, and phase change materials.",
-    ))
-    jobs.append(Experience(
+    )
+    e.json_blob = [
+        "Performed EnergyPlus simulations and analysis investigating building envelopes, including PCMs"
+    ]
+    jobs.append(e)
+
+    e = Experience(
         title="Engineering Intern",
         date="Summer 2005",
         company="Specific Systems, Tulsa, OK",
-        description="Introduced to design and manufacturing of modular HVAC equipment. Designed and fabricated parts. Performed various mechanical and structural analysis on designs. Aided in the construction of a thermal test chamber.",
-    ))
+    )
+    e.json_blob = [
+        "Learned and assisted with design and manufacturing of modular HVAC equipment",
+        "Designed and fabricated parts.",
+        "Performed various mechanical and structural analysis on designs.",
+        "Aided in the construction of a thermal test chamber."
+    ]
+    jobs.append(e)
     return jobs
 
 
