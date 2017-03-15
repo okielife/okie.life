@@ -28,8 +28,8 @@
                 </button>
                 <div class="navbar-header">
                     <a href="{% url 'root-index' %}" class="pull-left"><img src="{% static 'images/main_logo.png' %}"
-                                                                       style="height:50px;"></a>
-{#                    <a class="navbar-brand" href="{% url 'root-index' %}">Okie Life</a>#}
+                                                                            style="height:50px;"></a>
+                    {#                    <a class="navbar-brand" href="{% url 'root-index' %}">Okie Life</a>#}
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -37,6 +37,19 @@
                     <li><a href="#">Consulting</a></li>
                     <li><a href="{% url 'cv-index' %}">CV</a></li>
                     <li><a href="#">Family</a></li>
+                    <li><a href="{% url 'pokecards-index' %}">Pokecards</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="#"><span
+                                class="glyphicon glyphicon-user"></span> User: {{ user.get_username }}</a></li>
+                        <li><a href="{% url 'logout' %}?next={{ request.path }}"><span
+                                class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}?next={{ request.path }}"><span
+                                class="glyphicon glyphicon-log-in"></span>
+                            Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

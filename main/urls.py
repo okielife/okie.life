@@ -21,4 +21,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='root-index'),
     url(r'^cv/', include('cv.urls')),
+    url(r'^pokecards/', include('pokecards.urls')),
+]
+
+urlpatterns += [
+    url('^accounts/', include('django.contrib.auth.urls')),
 ]
