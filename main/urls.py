@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from .views import index
+from .views import index, humans
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='root-index'),
     url(r'^cv/', include('cv.urls')),
     url(r'^pokecards/', include('pokecards.urls')),
+    url(r'^humans.txt', humans, name='humans'),
 ]
 
 urlpatterns += [
