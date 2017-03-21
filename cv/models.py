@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-
+from django.core.urlresolvers import reverse
 from django.db import models
 
 
@@ -11,6 +11,9 @@ class Person(models.Model):
 
     def __str__(self):
         return "CV for %s" % self.name
+
+    # def get_absolute_url(self):
+    #     return reverse('person-detail', args=[str(self.id)])
 
 
 class Publication(models.Model):

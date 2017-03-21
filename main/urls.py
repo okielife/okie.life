@@ -18,11 +18,17 @@ from django.contrib import admin
 from .views import index, humans
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    # root view
     url(r'^$', index, name='root-index'),
+    # administration page
+    url(r'^admin/', admin.site.urls),
+    # humans.txt, robots.txt, etc.
+    url(r'^humans.txt', humans, name='humans'),
+    # include each app with its own urls
     url(r'^cv/', include('cv.urls')),
     url(r'^pokecards/', include('pokecards.urls')),
-    url(r'^humans.txt', humans, name='humans'),
+    url(r'^consulting/', include('consulting.urls')),
+    url(r'^family/', include('family.urls')),
 ]
 
 urlpatterns += [
