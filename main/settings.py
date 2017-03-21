@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'cv.apps.CvConfig',
     'pokecards.apps.PokecardsConfig',
     'consulting.apps.ConsultingConfig',
+    'family.apps.FamilyConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

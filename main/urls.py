@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^cv/', include('cv.urls')),
     url(r'^pokecards/', include('pokecards.urls')),
     url(r'^consulting/', include('consulting.urls')),
+    url(r'^family/', include('family.urls')),
 ]
 
 urlpatterns += [
