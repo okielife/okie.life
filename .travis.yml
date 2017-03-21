@@ -1,0 +1,14 @@
+language: python
+
+cache: pip
+
+env:
+  matrix:
+    - TOX_ENV=python
+
+install:
+  - pip install --upgrade pip
+  - pip install tox
+
+script:
+  - tox -e $TOX_ENV
