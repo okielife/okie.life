@@ -30,7 +30,7 @@
                             <tr>
                                 <td>{{ inst.owner }}</td>
                                 <td>{{ inst.id }}</td>
-                                <td><a href="{% url 'cardinstance-detail' inst.id %}">Instance</a></td>
+                                <td><a href="{% url 'pokecards:cardinstance-detail' inst.id %}">Instance</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>

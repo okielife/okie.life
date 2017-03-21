@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='pokecards-index'),
+    url(r'^$', views.index, name='index'),
     url(r'^mycards/$', views.MyCardInstancesListView.as_view(), name='my-cards'),
     url(r'^cardinstances/(?P<pk>[-\w]+)', views.CardInstanceDetailView.as_view(), name='cardinstance-detail'),
     url(r'^cards/$', views.AllCardsView.as_view(), name='all-cards'),

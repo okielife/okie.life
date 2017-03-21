@@ -48,7 +48,7 @@ def create_card(request):
         if Card.objects.filter(character=post['character']).count() > 0:
             return JsonResponse({'message': u"Character name already in use."}, status=400)
         new_char = Card.objects.create(character=post['character'], static_image_path=post['image_path'])
-        return HttpResponseRedirect(reverse('card-detail', args=[new_char.id]))
+        return HttpResponseRedirect(reverse('pokecards:card-detail', args=[new_char.id]))
     else:
         return JsonResponse({'message': u"Insufficient POST data (need 'character' and 'image_path')"}, status=400)
 

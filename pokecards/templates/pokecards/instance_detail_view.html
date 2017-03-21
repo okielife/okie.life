@@ -25,7 +25,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href="{% url 'card-detail' cardinstance.card.pk %}">{{ cardinstance.card.character }}</a></td>
+                            <td><a href="{% url 'pokecards:card-detail' cardinstance.card.pk %}">{{ cardinstance.card.character }}</a></td>
                             <td>{{ cardinstance.id }}</td>
                             <td>{{ cardinstance.owner }}</td>
                         </tr>
