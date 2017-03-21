@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 
 from . import views
 
+app_name = 'cv'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^publications/', views.publications, name='publications'),
