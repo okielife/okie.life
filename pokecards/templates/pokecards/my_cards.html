@@ -16,7 +16,7 @@
                 {% if cardinstance_list %}
                     <div id="cards" class="list-group">
                         {% for cardinst in cardinstance_list %}
-                            <a class="list-group-item" href="{% url 'cardinstance-detail' cardinst.id %}">
+                            <a class="list-group-item" href="{% url 'pokecards:cardinstance-detail' cardinst.id %}">
                                 {{cardinst.card.character}} ({{ cardinst.id }})
                             </a>
                         {% endfor %}

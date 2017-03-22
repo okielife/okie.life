@@ -25,10 +25,10 @@ urlpatterns = [
     # humans.txt, robots.txt, etc.
     url(r'^humans.txt', humans, name='humans'),
     # include each app with its own urls
-    url(r'^cv/', include('cv.urls')),
-    url(r'^pokecards/', include('pokecards.urls')),
-    url(r'^consulting/', include('consulting.urls')),
-    url(r'^family/', include('family.urls')),
+    url(r'^cv/', include('cv.urls', namespace='cv')),
+    url(r'^pokecards/', include('pokecards.urls', namespace='pokecards')),
+    url(r'^consulting/', include('consulting.urls', namespace='consulting')),
+    url(r'^family/', include('family.urls', namespace='family')),
 ]
 
 urlpatterns += [
