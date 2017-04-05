@@ -7,7 +7,9 @@
     <div id="outline" class="list-group">
         <a class="list-group-item" href="{% url 'pokecards:all-cards' %}"><span class="glyphicon glyphicon-tags"></span> All Cards</a>
         {% if user.is_authenticated %}
-            <a class="list-group-item"  href="{% url 'pokecards:my-cards' %}"><span class="glyphicon glyphicon-tag"></span> My Cards</a>
+            <a class="list-group-item" href="{% url 'pokecards:my-cards' %}"><span class="glyphicon glyphicon-tag"></span> My Cards</a>
+            <a class="list-group-item" href="{% url 'pokecards:create-game' %}"><span class="glyphicon glyphicon-plus-sign"></span> Start New Game</a>
+            <a class="list-group-item" href="{% url 'pokecards:games-list' %}"><span class="glyphicon glyphicon-list"></span> My Games</a>
         {% endif %}
     </div>
 {% endblock %}

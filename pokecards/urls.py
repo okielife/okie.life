@@ -11,4 +11,7 @@ urlpatterns = [
     url(r'^cards/create/', views.create_card, name='create-card'),
     url(r'^cards/ajax_create_card/', views.ajax_create_card, name='ajax-create-card'),
     url(r'^cards/character-available/', views.ajax_char_available, name='character-available'),
+    url(r'^games/$', views.GameListView.as_view(), name='games-list'),
+    url(r'^games/(?P<pk>\d+)/continue/$', views.game_continue, name='game-continue'),
+    url(r'^games/create/$', views.game_start, name='create-game'),
 ]

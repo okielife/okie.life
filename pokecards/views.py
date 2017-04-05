@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import CardInstance, Card
+from .models import CardInstance, Card, GameState
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseRedirect
@@ -76,3 +76,23 @@ def ajax_char_available(request):
             return JsonResponse(data={'available': 'true'})
         else:
             return JsonResponse(data={'available': 'false'})
+
+
+class GameListView(generic.ListView):
+    model = GameState
+    template_name = 'pokecards/game/list_my_games.html'
+
+    def get_queryset(self):
+        return GameState.objects.filter(player=self.request.user)
+
+
+def game_continue(request, pk):
+    try:
+        current_game = GameState.objects.get(id=pk)
+    except GameState.DoesNotExist:
+        return JsonResponse({'error':'Game state with pk = {0} does not exist'.format(pk)}, status=404)
+    return render(request, 'pokecards/game/continue_game.html', context={'game': current_game})
+
+
+def game_start(request):
+    return render(request, 'pokecards/game/start_new_game.html')
