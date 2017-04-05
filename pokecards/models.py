@@ -23,3 +23,12 @@ class CardInstance(models.Model):
             return 'Card type %s; owned by %s' % (self.card.character, self.owner.get_username())
         else:
             return 'Card type %s; unowned' % self.card.character
+
+
+class GameState(models.Model):
+    player = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    game_nickname = models.CharField(max_length=100, default="New Game")
+    level = models.IntegerField(default=0)
+
+    def __str__(self):
+        return "%s : on level %i" % (self.game_nickname, self.level)

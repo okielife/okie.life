@@ -1,0 +1,36 @@
+{% extends "pokecards/pokecard_base.html" %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <h1>My Games</h1>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Game Nickname</th>
+                            <th>Current Level</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for game in game_states %}
+                            <tr>
+                                <td>{{ game.game_nickname }}</td>
+                                <td>{{ game.level }}</td>
+                                <td><a href="{% url 'pokecards:game-continue' game.id %}">Go</a> <a href="{% url 'pokecards:game-delete' game.id %}">Delete</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
