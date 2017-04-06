@@ -34,13 +34,13 @@
     <script>
         var done = function (res, status) {
             if (status == "success") {
-                location.href = "/pokecards/games/";
+                var obj = JSON.parse(res.responseText);
+                location.href = "/pokecards/games/" + obj['id'] + '/continue/';
             }
         };
         var create_game = function () {
             {% if user.is_authenticated %}
                 var nickname = $("#nickname").val();
-                console.log("I am here!");
                 if (nickname != "") {
                     var data = {nickname: nickname, csrfmiddlewaretoken: '{{ csrf_token }}'};
                     var args = {type: "POST", url: "/pokecards/games/ajax_create_game/", data: data, complete: done};

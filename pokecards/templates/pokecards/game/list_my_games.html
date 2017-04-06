@@ -25,7 +25,7 @@
                             <tr>
                                 <td>{{ game.game_nickname }}</td>
                                 <td>{{ game.level }}</td>
-                                <td><a href="{% url 'pokecards:game-continue' game.id %}">Go</a> | <a href="#">Delete</a></td>
+                                <td><a href="{% url 'pokecards:game-continue' game.id %}">Go</a> | <a href="{% url 'pokecards:game-delete' game.id %}">Delete</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>

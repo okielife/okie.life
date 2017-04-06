@@ -15,4 +15,6 @@ urlpatterns = [
     url(r'^games/(?P<pk>\d+)/continue/$', views.game_continue, name='game-continue'),
     url(r'^games/create/$', views.game_start, name='create-game'),
     url(r'^games/ajax_create_game/$', views.ajax_create_game, name='ajax-create-game'),
+    url(r'^games/(?P<pk>\d+)/delete/$', views.delete_game, name='game-delete'),
+    url(r'^games/(?P<pk>\d+)/delete/confirmed/$', views.ajax_delete_game, name='ajax-delete-game'),
 ]

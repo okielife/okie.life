@@ -80,8 +80,8 @@ def ajax_create_game(request):
         if users_games.filter(game_nickname=post['nickname']).count() > 0:
             return JsonResponse({'message': u"Game name name already in use."}, status=400)
         else:
-            GameState.objects.create(game_nickname=post['nickname'], player=this_user)
-            return JsonResponse({'nickname': post['nickname']})
+            g = GameState.objects.create(game_nickname=post['nickname'], player=this_user)
+            return JsonResponse({'nickname': post['nickname'], 'id': g.pk})
     else:
         return JsonResponse({'msg': u"Requires a 'nickname'!"}, status=400)
 
@@ -114,3 +114,27 @@ def game_continue(request, pk):
 
 def game_start(request):
     return render(request, 'pokecards/game/start_new_game.html')
+
+
+def delete_game(request, pk):
+    try:
+        current_game = GameState.objects.get(id=pk)
+    except GameState.DoesNotExist:
+        return JsonResponse({'error': 'Game state with pk = {0} does not exist'.format(pk)}, status=404)
+    return render(request, 'pokecards/game/delete_game.html', context={'game': current_game})
+
+
+def ajax_delete_game(request, pk):
+    this_user = User.objects.get(id=request.user.id)
+    users_games = GameState.objects.filter(player=this_user)
+    try:
+        game_to_delete = users_games.filter(id=pk)
+    except GameState.DoesNotExist:
+        return JsonResponse({'error': 'Game did not appear to belong to this user'}, status=400)
+    if not request.method == "POST":  # should be delete, but ajax isn't liking it...
+        return JsonResponse({'message': u"Only accepts POST requests"}, status=405)
+    try:
+        game_to_delete.delete()
+    except:  # what exceptions would I catch?
+        return JsonResponse({'message': u"Could not delete...weird"}, status=405)
+    return JsonResponse({'message': 'success'})
