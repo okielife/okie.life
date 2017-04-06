@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -66,6 +67,23 @@ def ajax_create_card(request):
             return JsonResponse({'character': post['character'], 'image_path': post['image_path']})
     else:
         return JsonResponse({'msg': u"Requires both 'slug' and 'title'!"}, status=400)
+
+
+@login_required
+def ajax_create_game(request):
+    this_user = User.objects.get(id=request.user.id)
+    users_games = GameState.objects.filter(player=this_user)
+    if not request.method == "POST":
+        return JsonResponse({'message': u"Only accepts POST requests"}, status=405)
+    post = request.POST.copy()
+    if 'nickname' in post:
+        if users_games.filter(game_nickname=post['nickname']).count() > 0:
+            return JsonResponse({'message': u"Game name name already in use."}, status=400)
+        else:
+            GameState.objects.create(game_nickname=post['nickname'], player=this_user)
+            return JsonResponse({'nickname': post['nickname']})
+    else:
+        return JsonResponse({'msg': u"Requires a 'nickname'!"}, status=400)
 
 
 def ajax_char_available(request):

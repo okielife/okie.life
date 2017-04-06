@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^games/$', views.GameListView.as_view(), name='games-list'),
     url(r'^games/(?P<pk>\d+)/continue/$', views.game_continue, name='game-continue'),
     url(r'^games/create/$', views.game_start, name='create-game'),
+    url(r'^games/ajax_create_game/$', views.ajax_create_game, name='ajax-create-game'),
 ]
