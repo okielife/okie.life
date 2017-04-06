@@ -1,11 +1,12 @@
 from django.contrib import admin
 
-from .models import Card, CardInstance, GameState
+from .models import Card, CardInstance, GameState, GameQuestion
 
 
 admin.site.register(Card)
 admin.site.register(CardInstance)
 admin.site.register(GameState)
+admin.site.register(GameQuestion)
 
 
 # @admin.register(CardInstance)

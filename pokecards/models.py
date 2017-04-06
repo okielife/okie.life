@@ -32,3 +32,16 @@ class GameState(models.Model):
 
     def __str__(self):
         return "%s : on level %i" % (self.game_nickname, self.level)
+
+
+class GameQuestion(models.Model):
+    question = models.TextField(default="Example Question?")
+    correct_answer = models.TextField(default="Example Correct Answer")
+    incorrect_answers = models.TextField(default="PipeDelimited|ListOf|BadAnswers")
+    game_instance = models.ForeignKey(GameState, on_delete=models.SET_NULL, null=True, blank=True)
+
+    def __str__(self):
+        if len(self.question) < 50:
+            return self.question
+        else:
+            return self.question[0:47] + " ..."

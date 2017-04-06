@@ -1,0 +1,20 @@
+[
+  {
+    "model": "pokecards.gamequestion",
+    "pk": 1,
+    "fields": {
+      "question": "Which of these Pokemon is the heaviest?",
+      "correct_answer": "Groudon",
+      "incorrect_answers": "Charizard|Metagross|Snorlax"
+    }
+  },
+  {
+    "model": "pokecards.gamequestion",
+    "pk": 2,
+    "fields": {
+      "question": "If your opponent sends out a Flying Type Pokémon, which of the following Types should you send out to counter them?",
+      "correct_answer": "Electric Type",
+      "incorrect_answers": "Normal Type|Bug Type|Psychic Type"
+    }
+  }
+]
