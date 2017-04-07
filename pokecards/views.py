@@ -1,12 +1,14 @@
-from django.shortcuts import render
-from django.views import generic
-from .models import CardInstance, Card, GameState
+from random import shuffle
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import JsonResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
-from random import shuffle
+from django.core.urlresolvers import reverse
+from django.http import JsonResponse, HttpResponseRedirect
+from django.shortcuts import render
+from django.views import generic
+
+from .models import CardInstance, Card, GameState, GameQuestion
 
 
 def index(request):
@@ -81,7 +83,13 @@ def ajax_create_game(request):
         if users_games.filter(game_nickname=post['nickname']).count() > 0:
             return JsonResponse({'message': u"Game name name already in use."}, status=400)
         else:
-            g = GameState.objects.create(game_nickname=post['nickname'], player=this_user)
+            # first get all the available game IDs, shuffle them, then take the first 2 and store it in the game
+            question_ids = [str(q.id) for q in GameQuestion.objects.all()]
+            shuffle(question_ids)
+            question_ids = question_ids[0:2]
+            question_id_string = ','.join(question_ids)
+            g = GameState.objects.create(game_nickname=post['nickname'], player=this_user,
+                                         game_questions=question_id_string)
             return JsonResponse({'nickname': post['nickname'], 'id': g.pk})
     else:
         return JsonResponse({'msg': u"Requires a 'nickname'!"}, status=400)
@@ -109,12 +117,22 @@ def game_continue(request, pk):
     try:
         current_game = GameState.objects.get(id=pk)
     except GameState.DoesNotExist:
-        return JsonResponse({'error':'Game state with pk = {0} does not exist'.format(pk)}, status=404)
-    incorrect_answers = ["Foo", "Bar", "Joe"]  # TODO: get this from current game level
-    correct_answer = ["OK"]  # TODO: get this from current game level
-    answers_list = incorrect_answers + correct_answer
+        return JsonResponse({'error': 'Game state with pk = {0} does not exist'.format(pk)}, status=404)
+    if current_game.level == 2:
+        return render(request, 'pokecards/game/game_complete.html', context={'game': current_game})
+    try:
+        questions_string = current_game.game_questions
+        question_ids = questions_string.split(',')
+        this_question_id = question_ids[current_game.level]
+        current_question = GameQuestion.objects.get(id=this_question_id)
+    except:
+        return JsonResponse({'error': 'Problem retrieving question for this game!'})
+    incorrect_answers = current_question.incorrect_answers.split('|')
+    correct_answer = current_question.correct_answer
+    answers_list = incorrect_answers + [correct_answer]
     shuffle(answers_list)
-    return render(request, 'pokecards/game/continue_game.html', context={'game': current_game, 'answers': answers_list})
+    return render(request, 'pokecards/game/continue_game.html',
+                  context={'game': current_game, 'answers': answers_list, 'question': current_question})
 
 
 def game_answer(request, pk):
@@ -125,8 +143,15 @@ def game_answer(request, pk):
     if not request.method == "POST":
         return JsonResponse({'message': u"Only accepts POST requests"}, status=405)
     post = request.POST.copy()
-    correct_answer = "OK"  # TODO: get this from current game level
-    if not 'answer' in post:
+    try:
+        questions_string = current_game.game_questions
+        question_ids = questions_string.split(',')
+        this_question_id = question_ids[current_game.level]
+        current_question = GameQuestion.objects.get(id=this_question_id)
+    except:
+        return JsonResponse({'error': 'Problem retrieving question for this game!'})
+    correct_answer = current_question.correct_answer
+    if 'answer' not in post:
         return JsonResponse({'error': 'Could not find an answer in the submission, try again'}, status=400)
     if post['answer'] == correct_answer:
         current_game.level += 1

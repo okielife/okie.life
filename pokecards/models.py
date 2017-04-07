@@ -29,6 +29,7 @@ class GameState(models.Model):
     player = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     game_nickname = models.CharField(max_length=100, default="New Game")
     level = models.IntegerField(default=0)
+    game_questions = models.TextField(default="", verbose_name="A comma delimited list of the questions for this game instance")
 
     def __str__(self):
         return "%s : on level %i" % (self.game_nickname, self.level)

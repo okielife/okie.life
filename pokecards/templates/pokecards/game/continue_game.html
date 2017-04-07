@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="col-md-12">
-                <h3>Choose your favorite subject:</h3>
+                <h3>{{ question }}</h3>
                 <form class="form-horizontal" role="form" action="{% url 'pokecards:game-answer' game.id %}" method="post">
                     {% csrf_token %}
                     <div class="form-group">
