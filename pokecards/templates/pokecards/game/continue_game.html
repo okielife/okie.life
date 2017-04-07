@@ -4,7 +4,8 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="col-md-12">
-                <h1>Game {{ game.game_nickname }}</h1>
+                <h1>Game: {{ game.game_nickname }}</h1>
+                <h2>Level: {{ game.level }}</h2>
             </div>
         </div>
     </div>
@@ -12,9 +13,15 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="col-md-12">
-                Currently you are on level {{ game.level }}.
-                Here would be your next problem!
-                Create a submit form here that presents a problem to the user and lets them submit and move on to the next level.
+                <h3>Choose your favorite subject:</h3>
+                <form class="form-horizontal" role="form" action="{% url 'pokecards:game-answer' game.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {% for answer in answers %}
+                        <button class="btn btn-default" name="answer" type="submit" value="{{ answer }}">{{ answer }}</button>
+                        {% endfor %}
+                    </div>
+                </form>
             </div>
         </div>
     </div>

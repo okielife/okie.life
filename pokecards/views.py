@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
+from random import shuffle
 
 
 def index(request):
@@ -109,7 +110,40 @@ def game_continue(request, pk):
         current_game = GameState.objects.get(id=pk)
     except GameState.DoesNotExist:
         return JsonResponse({'error':'Game state with pk = {0} does not exist'.format(pk)}, status=404)
-    return render(request, 'pokecards/game/continue_game.html', context={'game': current_game})
+    incorrect_answers = ["Foo", "Bar", "Joe"]  # TODO: get this from current game level
+    correct_answer = ["OK"]  # TODO: get this from current game level
+    answers_list = incorrect_answers + correct_answer
+    shuffle(answers_list)
+    return render(request, 'pokecards/game/continue_game.html', context={'game': current_game, 'answers': answers_list})
+
+
+def game_answer(request, pk):
+    try:
+        current_game = GameState.objects.get(id=pk)
+    except GameState.DoesNotExist:
+        return JsonResponse({'error': 'Game state with pk = {0} does not exist'.format(pk)}, status=404)
+    if not request.method == "POST":
+        return JsonResponse({'message': u"Only accepts POST requests"}, status=405)
+    post = request.POST.copy()
+    correct_answer = "OK"  # TODO: get this from current game level
+    if not 'answer' in post:
+        return JsonResponse({'error': 'Could not find an answer in the submission, try again'}, status=400)
+    if post['answer'] == correct_answer:
+        current_game.level += 1
+        current_game.save()
+        return render(request,
+                      'pokecards/game/question_answered.html',
+                      context={'game': current_game,
+                               'announcement': "Hooray!",
+                               'second_heading': "Correct Answer",
+                               'continue_word': "Continue Game"})
+    else:
+        return render(request,
+                      'pokecards/game/question_answered.html',
+                      context={'game': current_game,
+                               'announcement': "Oops!",
+                               'second_heading': "Incorrect Answer",
+                               'continue_word': "Try Again!"})
 
 
 def game_start(request):
