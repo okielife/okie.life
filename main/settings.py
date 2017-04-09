@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cv.apps.CvConfig',
-    'pokecards.apps.PokecardsConfig',
     'consulting.apps.ConsultingConfig',
     'family.apps.FamilyConfig',
 ]
