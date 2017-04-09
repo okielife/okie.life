@@ -31,7 +31,6 @@
                 <div class="navbar-header">
                     <a href="{% url 'root-index' %}" class="pull-left"><img src="{% static 'images/main_logo.png' %}"
                                                                             style="height:50px;"></a>
-                    {#                    <a class="navbar-brand" href="{% url 'root-index' %}">Okie Life</a>#}
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -39,6 +38,7 @@
                     <li><a href="{% url 'consulting:index' %}">Consulting</a></li>
                     <li><a href="{% url 'cv:index' %}">CV</a></li>
                     <li><a href="{% url 'family:index' %}">Family</a></li>
+                    <li><a href="{% url 'blog:index' %}">Blog</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
