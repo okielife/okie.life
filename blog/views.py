@@ -2,7 +2,7 @@ from datetime import datetime
 
 from django.forms import modelform_factory
 from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView
 
 from .forms import BlogForm
@@ -44,8 +44,8 @@ class CategoryDetailView(DetailView):
         return context
 
 
-def view_categories(request):
-    categories = Category.objects.all()
-    return render(request, 'blog/view_categories.html', context={
-        'categories': categories
-    })
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'blog/view_categories.html'
+    paginate_by = 10
+    context_object_name = 'categories'

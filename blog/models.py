@@ -23,7 +23,7 @@ class Blog(models.Model):
 
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(null=True)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return '%s' % self.title
