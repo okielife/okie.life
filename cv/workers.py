@@ -1,5 +1,6 @@
-from .models import Publication, Education, Person, Experience, Skill, MembershipItem, ProjectAttribute
 import json
+
+from .models import Publication, Education, Person, Experience, Skill, MembershipItem, ProjectAttribute
 
 
 def json_to_string(obj):

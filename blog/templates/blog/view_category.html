@@ -4,9 +4,9 @@
     <h3>Posts in Category: {{ category.title }}</h3>
     {% if posts %}
         <div class="list-group">
-        {% for post in posts %}
-            <a class="list-group-item" href="{% url 'blog:view_blog_post' post.pk %}">{{ post.title }}</a>
-        {% endfor %}
+            {% for post in posts %}
+                <a class="list-group-item" href="{% url 'blog:view_blog_post' post.pk %}">{{ post.title }}</a>
+            {% endfor %}
         </div>
     {% else %}
         <p>There are no posts.</p>

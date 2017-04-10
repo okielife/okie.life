@@ -15,4 +15,4 @@ executed by `Travis
 CI <https://travis-ci.org/okielife/okie.life>`__.
 
 .. |image1| image:: https://travis-ci.org/okielife/okie.life.svg?branch=master
-   :target: https://travis-ci.org/okielife/okie.life
+:target: https://travis-ci.org/okielife/okie.life

@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-from django.core.urlresolvers import reverse
+
 from django.db import models
 
 
@@ -12,8 +12,8 @@ class Person(models.Model):
     def __str__(self):
         return "CV for %s" % self.name
 
-    # def get_absolute_url(self):
-    #     return reverse('person-detail', args=[str(self.id)])
+        # def get_absolute_url(self):
+        #     return reverse('person-detail', args=[str(self.id)])
 
 
 class Publication(models.Model):
@@ -42,7 +42,8 @@ class Experience(models.Model):
     title = models.CharField(max_length=100, verbose_name="Job title")
     date = models.CharField(max_length=100, verbose_name="Descriptive time frame working for this company")
     company = models.CharField(max_length=100, verbose_name="Company name")
-    json_description = models.TextField(verbose_name="A JSON string description of job responsibilities, etc.", null=True)
+    json_description = models.TextField(verbose_name="A JSON string description of job responsibilities, etc.",
+                                        null=True)
     json_blob = None
 
 

@@ -3,8 +3,8 @@
 {% block content %}
     <h3>Blog Categories</h3>
     <div class="list-group">
-    {% for cat in categories %}
-        <a class="list-group-item" href="{% url 'blog:view_blog_category' cat.pk %}">{{ cat.title }}</a>
-    {% endfor %}
+        {% for cat in categories %}
+            <a class="list-group-item" href="{% url 'blog:view_blog_category' cat.pk %}">{{ cat.title }}</a>
+        {% endfor %}
     </div>
 {% endblock %}

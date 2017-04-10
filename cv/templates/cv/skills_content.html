@@ -1,8 +1,8 @@
 {% for category, skillset in skills.iteritems %}
-<h4>{{ category }}</h4>
-<ul class="list-group">
-    {% for skill in skillset %}
-    <li class="list-group-item">{{ skill.description }}</li>
-    {% endfor %}
-</ul>
+    <h4>{{ category }}</h4>
+    <ul class="list-group">
+        {% for skill in skillset %}
+            <li class="list-group-item">{{ skill.description }}</li>
+        {% endfor %}
+    </ul>
 {% endfor %}

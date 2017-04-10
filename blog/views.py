@@ -1,22 +1,24 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Category, Blog
-from django.views.generic.edit import CreateView
 from datetime import datetime
+
 from django.forms import modelform_factory
+from django.shortcuts import render
+from django.views.generic import DetailView
+from django.views.generic.edit import CreateView
+
 from .forms import BlogForm
+from .models import Category, Blog
 
 
 def index(request):
     return render(request, 'blog/index.html', context={
         'categories': Category.objects.all(),
-        'posts': Blog.objects.all()[:5]
+        'posts': Blog.objects.all()[:25]  # TODO: Paginate instead of hard limit
     })
 
 
-def view_post(request, pk):
-    return render(request, 'blog/view_post.html', context={
-        'post': get_object_or_404(Blog, pk=pk)
-    })
+class BlogView(DetailView):
+    model = Blog
+    template_name = 'blog/view_post.html'
 
 
 class BlogCreate(CreateView):
@@ -32,12 +34,14 @@ class BlogCreate(CreateView):
         return modelform_factory(self.model, form=BlogForm, fields=self.fields)
 
 
-def view_category(request, pk):
-    category = get_object_or_404(Category, pk=pk)
-    return render(request, 'blog/view_category.html', context={
-        'category': category,
-        'posts': Blog.objects.filter(category=category)[:5]
-    })
+class CategoryDetailView(DetailView):
+    model = Category
+    template_name = 'blog/view_category.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoryDetailView, self).get_context_data(**kwargs)
+        context['posts'] = Blog.objects.filter(category=self.object.pk)
+        return context
 
 
 def view_categories(request):

@@ -1,14 +1,14 @@
 {% for exp in experiences %}
-<h4>{{ exp.title }}</h4>
-<ul class="list-group">
-    <li class="list-group-item">{{ exp.date }}</li>
-    <li class="list-group-item">{{ exp.company }}</li>
-    <li class="list-group-item" style="background-color: #fafafa;">
-        <ul class="list-group-submenu" style="padding-left:0;">
-        {% for att in exp.json_blob %}
-            <li class="list-group-item">{{ att }}</li>
-        {% endfor %}
-        </ul>
-    </li>
-</ul>
+    <h4>{{ exp.title }}</h4>
+    <ul class="list-group">
+        <li class="list-group-item">{{ exp.date }}</li>
+        <li class="list-group-item">{{ exp.company }}</li>
+        <li class="list-group-item" style="background-color: #fafafa;">
+            <ul class="list-group-submenu" style="padding-left:0;">
+                {% for att in exp.json_blob %}
+                    <li class="list-group-item">{{ att }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
 {% endfor %}

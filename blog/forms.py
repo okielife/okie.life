@@ -1,9 +1,9 @@
 from django.forms import ModelForm
+
 from .models import Blog
 
 
 class BootstrapModelForm(ModelForm):
-
     def __init__(self, *args, **kwargs):
         super(BootstrapModelForm, self).__init__(*args, **kwargs)
         for field in iter(self.fields):
