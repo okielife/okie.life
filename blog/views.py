@@ -1,5 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Blog
+from django.views.generic.edit import CreateView
+from datetime import datetime
+from django.forms import modelform_factory
+from .forms import BlogForm
 
 
 def index(request):
@@ -13,6 +17,19 @@ def view_post(request, pk):
     return render(request, 'blog/view_post.html', context={
         'post': get_object_or_404(Blog, pk=pk)
     })
+
+
+class BlogCreate(CreateView):
+    model = Blog
+    fields = ['title', 'body', 'category']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.created_on = datetime.now()
+        return super(BlogCreate, self).form_valid(form)
+
+    def get_form_class(self):
+        return modelform_factory(self.model, form=BlogForm, fields=self.fields)
 
 
 def view_category(request, pk):
