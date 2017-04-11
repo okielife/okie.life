@@ -1,7 +1,6 @@
 import json
 import os
 
-from .models import Publication, Education, Person, Experience, Skill, MembershipItem, ProjectAttribute
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
