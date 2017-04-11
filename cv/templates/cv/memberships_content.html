@@ -1,8 +1,8 @@
-{% for category, attribute_set in memberships.iteritems %}
-    <h4>{{ category }}</h4>
+{% for category in memberships %}
+    <h4>{{ category.title }}</h4>
     <ul id="attributes" class="list-group">
-        {% for attr in attribute_set %}
-            <li class="list-group-item">{{ attr.description }}</li>
+        {% for attr in category.list %}
+            <li class="list-group-item">{{ attr }}</li>
         {% endfor %}
     </ul>
 {% endfor %}

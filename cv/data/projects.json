@@ -1,0 +1,65 @@
+{
+  "projects": [
+    {
+      "title": "EnergyPlus",
+      "list": [
+        "Generalized buried pipe heat transfer model",
+        "Plant pressure algorithms",
+        "Central plant solver overhaul",
+        "Development of a new testing framework",
+        "Overseeing technical efforts for Fortran to C++ translation and StarTeam to GitHub transition"
+      ]
+    },
+    {
+      "title": "EnergyPlus Focus",
+      "list": [
+        "A graphical tool to improve work-flow during development of EnergyPlus",
+        "Ability to modify reporting frequency/contents to any idf without opening the file",
+        "Test suite tool to provide specific testing of particular file types and configurations",
+        "Parametric tool using the EPMacro preprocessor, allows a generic number of parameters",
+        "Direct access to calculate a mathematical difference summary of two EnergyPlus output files",
+        "An IDF analyzer that compares directories of IDFs",
+        "Ability to run an EnergyPlus simulation on any input file with a single click using a compiled EnergyPlus library"
+      ]
+    },
+    {
+      "title": "Plant Parameter Estimation",
+      "list": [
+        "A tool to regress manufacturer's data into EnergyPlus inputs",
+        "Ability to paste in tabulated and correction factor data",
+        "Creates a graphical report showing the resulting parameter quality",
+        "Modular code allows for easy extension for new model types",
+        "Multithreaded code allows the graphical interface to run while background operations perform the curve fit or parameter estimation"
+      ]
+    },
+    {
+      "title": "Buried Pipe Heat Transfer Tool",
+      "list": [
+        "A graphical tool for performing buried pipe simulations",
+        "Formal XML input/output program structure",
+        "Utilizes the same model that is implemented in EnergyPlus for buried pipe simulations",
+        "Graphical mesh display and temperature/thermal property distribution"
+      ]
+    },
+    {
+      "title": "Data Acquisition",
+      "list": [
+        "A graphical Python application for monitoring data acquisition",
+        "Monitors data acquisition from a serial/USB port RS-232 device",
+        "Records raw data signals, converts to an analog, and processes into physical measurements where applicable",
+        "Running graphs on-screen show each measurement status",
+        "Implemented on a Linux machine, portable to other operating systems"
+      ]
+    },
+    {
+      "title": "IDD/IDF Library",
+      "list": [
+        "Multi-language library for accessing/manipulating idd and idf files",
+        "VB.Net based library parses IDD and IDF with extensive error handling",
+        "VB.Net application includes GUI and file comparison tools",
+        "Python cross platform library is lightweight, simple, with minimal error handling",
+        "Python application allows quick processing of well-formed idfs including multiple file comparisons"
+      ]
+    }
+  ]
+}

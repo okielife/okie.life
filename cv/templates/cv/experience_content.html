@@ -5,7 +5,7 @@
         <li class="list-group-item">{{ exp.company }}</li>
         <li class="list-group-item" style="background-color: #fafafa;">
             <ul class="list-group-submenu" style="padding-left:0;">
-                {% for att in exp.json_blob %}
+                {% for att in exp.tasks %}
                     <li class="list-group-item">{{ att }}</li>
                 {% endfor %}
             </ul>

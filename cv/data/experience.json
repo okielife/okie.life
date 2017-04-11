@@ -1,0 +1,46 @@
+{
+  "experience": [
+    {
+      "title": "Research Engineer, Multi-disciplinary",
+      "date": "May 2013 - Present",
+      "company": "National Renewable Energy Laboratory, Golden, CO",
+      "tasks": [
+        "Contributed to the Technology Performance Exchange, adding data entry forms for multiple technologies",
+        "Created the translator that converts TPEx datasets into components on the Building Component Library",
+        "Began leading technical development of EnergyPlus",
+        "Overseeing the technical changes accompanying the translation from FORTRAN to C++, and StarTeam to GitHub"
+      ]
+    },
+    {
+      "title": "Graduate Research Assistant",
+      "date": "January 2006 - May 2013",
+      "company": "Oklahoma State University, Stillwater, OK",
+      "tasks": [
+        "Designer of many aspects of the updated EnergyPlus central plant simulation",
+        "Developed a generalized horizontal ground heat exchanger model that includes zone thermal interaction",
+        "Performed experimental measurement and modeling of transport delay phenomena in piping systems",
+        "Provided simulation support for UFAD and internal mass cases to the Center for the Built Environment"
+      ]
+    },
+    {
+      "title": "Engineering Consultant",
+      "date": "Fall 2007, Summer 2009",
+      "company": "Oak Ridge National Laboratory, Oak Ridge, TN",
+      "tasks": [
+        "Performed EnergyPlus simulations and analysis investigating building envelopes, including PCMs"
+      ]
+    },
+    {
+      "title": "Engineering Intern",
+      "date": "Summer 2005",
+      "company": "Specific Systems, Tulsa, OK",
+      "tasks": [
+        "Learned and assisted with design and manufacturing of modular HVAC equipment",
+        "Designed and fabricated parts",
+        "Performed various mechanical and structural analysis on designs",
+        "Aided in the construction of a thermal test chamber"
+      ]
+    }
+  ]
+}
+
