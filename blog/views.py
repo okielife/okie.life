@@ -4,6 +4,7 @@ from django.forms import modelform_factory
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import BlogForm
 from .models import Category, Blog
@@ -21,7 +22,7 @@ class BlogView(DetailView):
     template_name = 'blog/view_post.html'
 
 
-class BlogCreate(CreateView):
+class BlogCreate(LoginRequiredMixin, CreateView):
     model = Blog
     fields = ['title', 'body', 'category']
 
