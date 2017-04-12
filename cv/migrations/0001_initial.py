@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -17,8 +16,10 @@ class Migration(migrations.Migration):
             name='Education',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('degree', models.CharField(max_length=100, verbose_name='Education degree, such as Doctor of Philosophy')),
-                ('field', models.CharField(max_length=100, verbose_name='Name of the field, such as Mechanical Engineering')),
+                ('degree',
+                 models.CharField(max_length=100, verbose_name='Education degree, such as Doctor of Philosophy')),
+                ('field',
+                 models.CharField(max_length=100, verbose_name='Name of the field, such as Mechanical Engineering')),
                 ('date', models.CharField(max_length=100, verbose_name='Date of degree, shortened, such as May 2013')),
                 ('school', models.CharField(max_length=100, verbose_name='The name of the university')),
                 ('thesis', models.CharField(max_length=100, verbose_name='Title of thesis if a thesis was completed')),
@@ -30,7 +31,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=100, verbose_name='Job title')),
-                ('date', models.CharField(max_length=100, verbose_name='Descriptive time frame working for this company')),
+                ('date',
+                 models.CharField(max_length=100, verbose_name='Descriptive time frame working for this company')),
                 ('company', models.CharField(max_length=100, verbose_name='Company name')),
                 ('description', models.TextField(verbose_name='A description of job responsibilities, etc.')),
             ],
@@ -66,7 +68,8 @@ class Migration(migrations.Migration):
                 ('authors', models.CharField(max_length=500, verbose_name='Pre-prettified list of authors')),
                 ('year', models.IntegerField(verbose_name='Year of publication')),
                 ('title', models.CharField(max_length=500, verbose_name='Title of publication')),
-                ('container', models.CharField(max_length=500, verbose_name='Pre-prettified conference or journal information')),
+                ('container',
+                 models.CharField(max_length=500, verbose_name='Pre-prettified conference or journal information')),
             ],
         ),
         migrations.CreateModel(

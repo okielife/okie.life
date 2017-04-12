@@ -1,0 +1,24 @@
+{% extends 'blog/blog_base.html' %}
+
+{% block content %}
+    <h3>Posts in Category: {{ category.title }}</h3>
+    {% if posts %}
+        <table class="table table-striped">
+            <tr>
+                <th>Creation Time</th>
+                <th>Blog Title</th>
+                <th>Author</th>
+            </tr>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.created_on|date:'Y-m-d H:i' }}</td>
+                <td><a href="{% url 'blog:view_blog_post' post.pk %}"> {{ post.title }}</a></td>
+                <td>{{ post.author }}</td>
+            </tr>
+            {% endfor %}
+        </div>
+        </table>
+    {% else %}
+        <p>There are no posts.</p>
+    {% endif %}
+{% endblock %}

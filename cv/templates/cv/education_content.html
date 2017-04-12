@@ -1,12 +1,12 @@
 {% for deg in degrees %}
-<h4>{{ deg.degree }}</h4>
-<ul class="list-group">
-    <li class="list-group-item">{{ deg.field }}</li>
-    <li class="list-group-item">{{ deg.school }}</li>
-    <li class="list-group-item">{{ deg.date }}</li>
-    {% if deg.thesis %}
-    <li class="list-group-item">Thesis: {{ deg.thesis }}</li>
-    {% endif %}
-    <li class="list-group-item">GPA: {{ deg.gpa }}</li>
-</ul>
+    <h4>{{ deg.degree }}</h4>
+    <ul class="list-group">
+        <li class="list-group-item">{{ deg.field }}</li>
+        <li class="list-group-item">{{ deg.school }}</li>
+        <li class="list-group-item">{{ deg.date }}</li>
+        {% if deg.thesis %}
+            <li class="list-group-item">Thesis: {{ deg.thesis }}</li>
+        {% endif %}
+        <li class="list-group-item">GPA: {{ deg.gpa }}</li>
+    </ul>
 {% endfor %}

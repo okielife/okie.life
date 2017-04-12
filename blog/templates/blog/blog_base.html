@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block leftnav %}
+    <h3>Information</h3>
+    <div id="outline" class="list-group">
+        <a class="list-group-item" href="{% url 'blog:index' %}"><span class="glyphicon glyphicon-home"></span> Home</a>
+        <a class="list-group-item" href="{% url 'blog:view_blog_categories' %}"><span
+                class="glyphicon glyphicon-th-list"></span> Categories</a>
+        <a class="list-group-item" href="{% url 'blog:create_blog' %}"><span class="glyphicon glyphicon-plus"></span>
+            New Post</a>
+    </div>
+{% endblock %}
+
+{% block content %}{% endblock %}

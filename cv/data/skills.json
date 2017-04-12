@@ -1,0 +1,30 @@
+{
+  "skills": [
+    {
+      "title": "General Computing",
+      "list": [
+        "Proficient with Windows, Mac, and Linux (multiple distributions) Operating System Environments"
+      ]
+    },
+    {
+      "title": "Software Development",
+      "list": [
+        "Scripting Languages: Batch (Windows), Bash (Linux), Python, Ruby",
+        "Programming Languages: FORTRAN, C, C++, Python, VB.Net, VBA, Modelica, (Including Language Interop)",
+        "GUI Development: VB.Net (Windows), Python (Cross-platform)",
+        "Software version control tools, including Borland Starteam, Git, Subversion, and Bazaar"
+      ]
+    },
+    {
+      "title": "Other Software",
+      "list": [
+        "Publication tools, including LaTeX and GnuPlot",
+        "Office suites, including LibreOffice and MS Office, Gnumeric",
+        "Publication tools, including LaTeX and GnuPlot",
+        "Software Tools, including EES, MathCAD, R, Fluent, AutoCAD, LibreCAD and Octave (Matlab)",
+        "Virtual machine utilization",
+        "Web Development using Django"
+      ]
+    }
+  ]
+}

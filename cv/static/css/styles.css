@@ -34,7 +34,6 @@ div.pagination {
     border-radius: 0;
 }
 
-
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
@@ -60,7 +59,7 @@ div.pagination {
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
+.sidenav a:hover, .offcanvas a:focus {
     color: #f1f1f1;
 }
 
@@ -81,6 +80,11 @@ div.pagination {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }

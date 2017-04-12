@@ -5,6 +5,7 @@ cache: pip
 env:
   matrix:
     - TOX_ENV=python
+    - TOX_ENV=flake8
 
 install:
   - pip install tox

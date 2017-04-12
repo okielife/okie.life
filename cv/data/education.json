@@ -1,0 +1,27 @@
+{
+  "degrees": [
+    {
+      "degree": "Doctor of Philosophy",
+        "field": "Mechanical Engineering",
+        "school": "Oklahoma State University",
+        "date": "May 2013",
+        "thesis": "A Generalized Pipe Heat Transfer Model for Whole Building Simulation Applications",
+        "gpa": 4.0
+    },
+    {
+      "degree": "Master of Science",
+        "field": "Mechanical Engineering",
+        "school": "Oklahoma State University",
+        "date": "May 2008",
+        "thesis": "Development, Implementation, and Verification of a Buried Pipe Model in EnergyPlus",
+        "gpa": 4.0
+    },
+    {
+      "degree": "Bachelor of Science",
+        "field": "Mechanical Engineering",
+        "school": "Oklahoma State University",
+        "date": "May 2006",
+        "gpa": 3.52
+    }
+  ]
+}

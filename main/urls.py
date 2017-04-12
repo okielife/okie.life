@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+
 from .views import index, humans
 
 urlpatterns = [
@@ -25,6 +26,7 @@ urlpatterns = [
     # humans.txt, robots.txt, etc.
     url(r'^humans.txt', humans, name='humans'),
     # include each app with its own urls
+    url(r'^blog/', include('blog.urls', namespace="blog")),
     url(r'^cv/', include('cv.urls', namespace='cv')),
     url(r'^consulting/', include('consulting.urls', namespace='consulting')),
     url(r'^family/', include('family.urls', namespace='family')),

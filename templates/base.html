@@ -8,10 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=latin">
+        <link rel="stylesheet" type="text/css"
+              href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=latin">
         <script src="{% static 'js/jquery-3.2.0.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
-        <style>body {font-family: Ubuntu, sans-serif;}</style>
+        <style>body {
+            font-family: Ubuntu, sans-serif;
+        }</style>
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <link rel="shortcut icon" href="{% static 'images/main_logo.png' %}"/>
     </head>
@@ -31,7 +34,6 @@
                 <div class="navbar-header">
                     <a href="{% url 'root-index' %}" class="pull-left"><img src="{% static 'images/main_logo.png' %}"
                                                                             style="height:50px;"></a>
-                    {#                    <a class="navbar-brand" href="{% url 'root-index' %}">Okie Life</a>#}
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -39,6 +41,7 @@
                     <li><a href="{% url 'consulting:index' %}">Consulting</a></li>
                     <li><a href="{% url 'cv:index' %}">CV</a></li>
                     <li><a href="{% url 'family:index' %}">Family</a></li>
+                    <li><a href="{% url 'blog:index' %}">Blog</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
