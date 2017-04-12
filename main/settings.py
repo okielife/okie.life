@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cbg46p-l3%yj%l+gn+^w0q3ww)-cm5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['pacific-wave-66590.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['okielife.herokuapp.com', '127.0.0.1', 'okie.life']
 
 # Application definition
 
