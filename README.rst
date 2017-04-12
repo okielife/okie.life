@@ -3,7 +3,7 @@ Okie.Life
 
 This repo holds the Django-backed website for OkieLife_.
 
-.. _OkieLife: <https://cv.okie.life/>
+.. _OkieLife: <https://okie.life/>
 
 Testing |image1|
 ----------------
