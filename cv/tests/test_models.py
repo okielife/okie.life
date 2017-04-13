@@ -20,7 +20,3 @@ class PersonModelTest(TestCase):
         self.assertEqual("Person Jones", person.name)
         self.assertEqual(max_len, 100)
 
-        # def test_get_absolute_url(self):
-        #     person = Person.objects.get(id=1)
-        #     # This will also fail if the urlconf is not defined.
-        #     self.assertEquals(person.get_absolute_url(),'/cv/person/1')

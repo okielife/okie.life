@@ -21,7 +21,7 @@ class Category(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=100, unique=True)
     body = models.TextField()
-    category = models.ForeignKey(Category, related_name="category")
+    category = models.ForeignKey(Category, related_name="category", null=True)
     posted = models.DateField(db_index=True, auto_now_add=True)
 
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

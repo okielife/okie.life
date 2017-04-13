@@ -5,14 +5,10 @@ import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
-def json_to_string(obj):
-    return json.dumps(obj)
-
-
 def json_to_object(filename):
     file_path = os.path.join(dir_path, 'data', filename)
     if not os.path.exists(file_path):
-        return None
+        return None  # pragma: no cover
     return json.load(open(file_path))
 
 
