@@ -19,4 +19,3 @@ class PersonModelTest(TestCase):
         max_len = person._meta.get_field('name').max_length
         self.assertEqual("Person Jones", person.name)
         self.assertEqual(max_len, 100)
-
