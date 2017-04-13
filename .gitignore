@@ -3,3 +3,6 @@
 .idea
 db.sqlite3
 .tox
+
+_build
+.coverage

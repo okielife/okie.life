@@ -11,6 +11,9 @@ class Category(models.Model):
     def __unicode__(self):
         return '%s' % self.title
 
+    def __str__(self):
+        return self.__unicode__()
+
     def get_absolute_url(self):
         return reverse('blog:view_blog_category', args=[str(self.id)])
 
@@ -27,6 +30,9 @@ class Blog(models.Model):
 
     def __unicode__(self):
         return '%s' % self.title
+
+    def __str__(self):
+        return self.__unicode__()
 
     def get_absolute_url(self):
         return reverse('blog:view_blog_post', args=[str(self.id)])
