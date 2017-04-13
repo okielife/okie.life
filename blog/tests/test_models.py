@@ -1,7 +1,13 @@
 # Create your tests here.
+import sys
+
 from django.test import TestCase
 
 from blog.models import Category, Blog
+
+# override the old unicode() function to just call str() on python 3
+if sys.version_info.major == 3:
+    unicode = str
 
 
 class TestCategory(TestCase):
