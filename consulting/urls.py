@@ -5,5 +5,5 @@ from . import views
 app_name = 'consulting'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^status$', views.status, name='status'),
+    url(r'^status/$', views.status, name='status'),
 ]
