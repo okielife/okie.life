@@ -15,7 +15,7 @@ class TestCategory(TestCase):
         self.assertEqual(self.c.title, str(self.c))
         # if we are on 2 then also check unicode
         if sys.version_info.major == 2:
-            self.assertEqual(self.c.title, unicode(self.c))
+            self.assertEqual(self.c.title, unicode(self.c))  # noqa: F821
 
 
 class TestBlog(TestCase):
@@ -27,4 +27,4 @@ class TestBlog(TestCase):
         self.assertEqual(self.b.title, str(self.b))
         # if we are on 2 then also check unicode
         if sys.version_info.major == 2:
-            self.assertEqual(self.b.title, unicode(self.b))
+            self.assertEqual(self.b.title, unicode(self.b))  # noqa: F821
