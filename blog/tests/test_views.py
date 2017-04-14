@@ -81,7 +81,6 @@ class TestBlogCreateLoggedInView(TestCase):
         c = Category.objects.create(title='NewCategory')
         data['category'] = c.id
         resp = self.client.post(reverse('blog:create_blog'), data)
-        posts_after = Blog.objects.all()
         self.assertEqual(resp.status_code, 302)
         self.assertRedirects(resp, reverse('blog:view_blog_post', args=(1,)))
 
