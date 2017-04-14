@@ -69,6 +69,22 @@ class TestBlogCreateLoggedInView(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'blog/blog_form.html')
 
+    def test_post_works(self):
+        # first get the initial response
+        r = self.client.get(reverse('blog:create_blog'))
+        # then get the form instance from that, it is unbound, but should contain the keys
+        f = r.context['form']
+        # if we ever wanted to test that the form was pre-populated, just check f.initial here
+        data = dict(f.fields)
+        data['title'] = 'TitleName'
+        data['body'] = 'BodyOfPost'
+        c = Category.objects.create(title='NewCategory')
+        data['category'] = c.id
+        resp = self.client.post(reverse('blog:create_blog'), data)
+        posts_after = Blog.objects.all()
+        self.assertEqual(resp.status_code, 302)
+        self.assertRedirects(resp, reverse('blog:view_blog_post', args=(1,)))
+
 
 class TestCategoryView(TestCase):
 
