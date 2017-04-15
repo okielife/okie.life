@@ -14,11 +14,11 @@
         <p>There are no posts.</p>
     {% endif %}
 
-    <h3>All Posts</h3>
-    {% if posts %}
+    <h3>Recent Posts</h3>
+    {% if recent_posts %}
         <div class="list-group">
-            {% for post in posts %}
-                <a class="list-group-item" href="{% url 'blog:view_blog_post' post.pk %}">{{ post.title }}</a>
+            {% for post in recent_posts %}
+                <a class="list-group-item" href="{% url 'blog:view_blog_post' post.pk %}">{{ post.title }} by {{ post.author }}</a>
             {% endfor %}
         </div>
     {% else %}

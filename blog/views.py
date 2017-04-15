@@ -13,7 +13,7 @@ from .models import Category, Blog
 def index(request):
     return render(request, 'blog/index.html', context={
         'categories': Category.objects.all(),
-        'posts': Blog.objects.all()[:25]  # TODO: Paginate instead of hard limit
+        'recent_posts': Blog.objects.all().order_by('-created_on')[:10]
     })
 
 
