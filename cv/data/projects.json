@@ -3,11 +3,13 @@
     {
       "title": "EnergyPlus",
       "list": [
+        "Modified EnergyPlus to support moving, rotating, in-water vessels",
+        "Enhancements to phase change materail modeling",
         "Generalized buried pipe heat transfer model",
         "Plant pressure algorithms",
         "Central plant solver overhaul",
         "Development of a new testing framework",
-        "Overseeing technical efforts for Fortran to C++ translation and StarTeam to GitHub transition"
+        "Transitioning EnergyPlus from Fortran to C++ translation and from StarTeam to GitHub"
       ]
     },
     {
