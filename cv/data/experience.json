@@ -5,10 +5,12 @@
       "date": "May 2013 - Present",
       "company": "National Renewable Energy Laboratory, Golden, CO",
       "tasks": [
-        "Contributed to the Technology Performance Exchange, adding data entry forms for multiple technologies",
-        "Created the translator that converts TPEx datasets into components on the Building Component Library",
-        "Began leading technical development of EnergyPlus",
-        "Overseeing the technical changes accompanying the translation from FORTRAN to C++, and StarTeam to GitHub"
+        "Served as technical lead on the Department of Energy flagship building simulation tool, EnergyPlus, providing project vision, fixing bugs, creating new features, managing releases, and other project support",
+        "Contributed to the Technology Performance Exchange (TPEx), adding data entry forms for multiple technologies, and creating the translator that converts TPEx datasets into components on the Building Component Library",
+        "Oversaw major transitions for EnergyPlus including the translation from FORTRAN to C++, and hosting repository from StarTeam to GitHub",
+        "Performed major internal modifications to EnergyPlus to allow it to be used to model ships, accounting for ship rotation, location, and water boundary condition",
+        "Managed a small business voucher from the Department of Energy that supported a small business by enhancing the EnergyPlus envelope phase change material simulation capabilities",
+        "Provided support to the SEED projects by implementing a new API framework, and developing a strong understanding of web-development in the process"
       ]
     },
     {
