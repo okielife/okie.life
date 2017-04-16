@@ -4,12 +4,12 @@
       "title": "EnergyPlus",
       "list": [
         "Modified EnergyPlus to support moving, rotating, in-water vessels",
-        "Enhancements to phase change materail modeling",
-        "Generalized buried pipe heat transfer model",
-        "Plant pressure algorithms",
-        "Central plant solver overhaul",
-        "Development of a new testing framework",
-        "Transitioning EnergyPlus from Fortran to C++ translation and from StarTeam to GitHub"
+        "Implemented enhancements to building envelope phase change material modeling",
+        "Developed a generalized buried pipe heat transfer model with zone heat balance connection",
+        "Added support for pressure based plant energy usage and flow calculations",
+        "Heavily involved in an overhaul of the central plant solver",
+        "Oversaw source code transition of EnergyPlus from Fortran to C++",
+        "Oversaw repository transition from StarTeam to GitHub"
       ]
     },
     {
@@ -31,7 +31,7 @@
         "Ability to paste in tabulated and correction factor data",
         "Creates a graphical report showing the resulting parameter quality",
         "Modular code allows for easy extension for new model types",
-        "Multithreaded code allows the graphical interface to run while background operations perform the curve fit or parameter estimation"
+        "Multi-threaded code allows the graphical interface to run while background operations perform the curve fit or parameter estimation"
       ]
     },
     {

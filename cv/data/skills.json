@@ -3,16 +3,20 @@
     {
       "title": "General Computing",
       "list": [
-        "Proficient with Windows, Mac, and Linux (multiple distributions) Operating System Environments"
+        "Performed development on Windows machines from Windows 3.1 to Windows 10, working on a machine of nearly every version in between",
+        "Worked on Linux machines from Mandrake in 1998 to Ubuntu 17.04, while also using Red Hat, FreeBSD, Mint, and core Debian distributions",
+        "Worked with Mac OSX most recently, performing all current development on Yosemite",
+        "Utilized virtual machines and other container solutions such as Docker"
       ]
     },
     {
       "title": "Software Development",
       "list": [
         "Scripting Languages: Batch (Windows), Bash (Linux), Python, Ruby",
-        "Programming Languages: FORTRAN, C, C++, Python, VB.Net, VBA, Modelica, (Including Language Interop)",
+        "Programming Languages: C++, Python, FORTRAN, C, VB.Net, VBA, Modelica",
+        "Implemented language interop on multiple projects to pass control through multiple languages, using both native library calls with data marshaling, and also Swig",
         "GUI Development: VB.Net (Windows), Python (Cross-platform)",
-        "Software version control tools, including Borland Starteam, Git, Subversion, and Bazaar"
+        "Software version control tools, including Git, Starteam, Subversion, and Bazaar"
       ]
     },
     {
@@ -20,10 +24,9 @@
       "list": [
         "Publication tools, including LaTeX and GnuPlot",
         "Office suites, including LibreOffice and MS Office, Gnumeric",
-        "Publication tools, including LaTeX and GnuPlot",
-        "Software Tools, including EES, MathCAD, R, Fluent, AutoCAD, LibreCAD and Octave (Matlab)",
-        "Virtual machine utilization",
-        "Web Development using Django"
+        "Numeric tools, including EES, Matlab (Octave), MathCad, R, and Fluent",
+        "Design Tools, including AutoCAD and LibreCAD",
+        "Web Development in Python using Django"
       ]
     }
   ]
