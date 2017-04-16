@@ -6,32 +6,16 @@
         <title>{% block title %}Okie Life{% endblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Cache-control" content="max-age=86400, public">
         {% load static %}
-        <noscript id="deferred-styles">
-            {# bootstrap css requires jquery, so put those first here #}
-            <script async src="{% static 'js/jquery/jquery-3.2.0.min.js' %}"></script>
-            <script async src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
-            <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
-            <link rel="stylesheet" type="text/css"
-                  href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=latin">
-            <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        </noscript>
-        <script>
-            var loadDeferredStyles = function () {
-                var addStylesNode = document.getElementById("deferred-styles");
-                var replacement = document.createElement("div");
-                replacement.innerHTML = addStylesNode.textContent;
-                document.body.appendChild(replacement)
-                addStylesNode.parentElement.removeChild(addStylesNode);
-            };
-            var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-                webkitRequestAnimationFrame || msRequestAnimationFrame;
-            if (raf) raf(function () {
-                window.setTimeout(loadDeferredStyles, 0);
-            });
-            else window.addEventListener('load', loadDeferredStyles);
-        </script>
+        <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css"
+              href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=latin">
+        <script src="{% static 'js/jquery/jquery-3.2.0.js' %}"></script>
+        <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+        <style>body {
+            font-family: Ubuntu, sans-serif;
+        }</style>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <link rel="shortcut icon" href="{% static 'images/main_logo.png' %}"/>
     </head>
 {% endblock %}
