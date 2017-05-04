@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+{% block htmlopen %}
+    <html lang="en">
+{% endblock %}
 
 {% block head %}
     <head>
@@ -14,8 +16,14 @@
 
         <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
         <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'angular/angular.js' %}"></script>
+        <script src="{% static 'angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+        <script src="{% static 'angular-ui-grid/ui-grid.min.js' %}"></script>
+        <script src="{% static 'angular-cookies/angular-cookies.js' %}"></script>
+        <script src="{% static 'lodash/lodash.js' %}"></script>
 
         <link rel="shortcut icon" href="{% static 'images/main_logo.png' %}"/>
+        <script src="{% static 'js/OtherApp.js' %}"></script>
     </head>
 {% endblock %}
 

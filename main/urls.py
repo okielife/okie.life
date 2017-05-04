@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^cv/', include('cv.urls', namespace='cv')),
     url(r'^consulting/', include('consulting.urls', namespace='consulting')),
     url(r'^family/', include('family.urls', namespace='family')),
+    url(r'^other/', include('other.urls', namespace='other')),
 ]
 
 urlpatterns += [

@@ -23,7 +23,9 @@
     "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
     "ubuntu-font": "https://google-fonts.azurewebsites.net/googleFonts/nameOfPackage?family=Ubuntu:regular,bold",
-    "glyphicons-halflings": "*"
+    "glyphicons-halflings": "*",
+    "angular-cookies": "^1.6.4",
+    "lodash": "^4.17.4"
   },
   "resolutions": {
     "angular": "^1.6.4"
