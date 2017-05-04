@@ -74,6 +74,7 @@
                 {% block leftnav %}{% endblock %}
             </div>
             <div class="col-md-10">
+            {% csrf_token %}
                 {% block content %}{% endblock %}
                 <div class="container-fluid">
                     <div class="row-fluid">
