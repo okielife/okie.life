@@ -9,3 +9,6 @@ _build
 
 bower_components
 staticfiles
+node_modules
+
+run_me.sh
