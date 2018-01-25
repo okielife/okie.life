@@ -122,7 +122,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "bower_components"),
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "base_static"),
 ]
 
 # redirect login
@@ -136,6 +136,6 @@ DATABASES['default'].update(db_from_env)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
