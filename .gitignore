@@ -8,7 +8,6 @@ _build
 .coverage
 
 bower_components
-staticfiles
+static
 node_modules
 
-run_me.sh
