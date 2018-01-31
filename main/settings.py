@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cbg46p-l3%yj%l+gn+^w0q3ww)-cm5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['okielife.herokuapp.com', '127.0.0.1', 'okie.life']
+ALLOWED_HOSTS = ['okielife.herokuapp.com', '127.0.0.1', '.okie.life']
 
 # Application definition
 
@@ -122,7 +122,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "bower_components"),
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "base_static"),
 ]
 
 # redirect login
@@ -136,6 +136,6 @@ DATABASES['default'].update(db_from_env)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
