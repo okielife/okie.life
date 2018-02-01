@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'consulting.apps.ConsultingConfig',
     'family.apps.FamilyConfig',
     'other.apps.OtherConfig',
+    'pictionary',
 ]
 
 MIDDLEWARE_CLASSES = [
