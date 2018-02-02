@@ -1,17 +1,15 @@
 {% extends 'pictionary/base.html' %}
-{% block title %}Audience Page{% endblock %}
-{% block extra_css %}
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-{% endblock %}
 
-{% block body %}
-<div>
-    <h1>Welcome to Pictionary!</h1>
-</div>
-<div>
-    <button type="button" ng-click="reset_timer()">Restart Timer</button>
-</div>
-<div>
-    <h1 id="demo" style="font-family:'Orbitron',sans-serif;color:green;">{[{ current_time }]}</h1>
+{% block content %}
+<div ng-app="pictionaryApp" ng-controller="pictionaryController">
+    <div>
+        <h1>Welcome to Pictionary!</h1>
+    </div>
+    <div>
+        <button type="button" ng-click="reset_timer()">Restart Timer</button>
+    </div>
+    <div>
+        <h1 id="demo" style="font-family:'Orbitron',sans-serif;color:green;">{[{ current_time }]}</h1>
+    </div>
 </div>
 {% endblock %}

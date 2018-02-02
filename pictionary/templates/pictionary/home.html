@@ -1,14 +1,7 @@
 {% extends 'pictionary/base.html' %}
-{% block title %}Home Page{% endblock %}
-{% block body %}
-<div>
-    <form action="/pictionary/player/">
-        <input type="submit" value="Player"/>
-    </form>
-</div>
-<div>
-    <form action="/pictionary/audience/">
-        <input type="submit" value="Audience"/>
-    </form>
-</div>
+
+{% block content %}
+<h3>
+    Select a view mode on the left!
+</h3>
 {% endblock %}

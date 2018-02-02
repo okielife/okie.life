@@ -20,10 +20,10 @@ from pictionary.views import home, player, audience, up_vote, down_vote, get_wor
 app_name = 'pictionary'
 
 urlpatterns = [
-    url(r'^player/', player),
-    url(r'^audience/', audience),
-    url(r'^up_vote/', up_vote),
-    url(r'^down_vote/', down_vote),
-    url(r'^get_word/', get_word),
-    url(r'^', home),
+    url(r'^player/', player, name='player'),
+    url(r'^audience/', audience, name='audience'),
+    url(r'^up_vote/', up_vote, name='up_vote'),
+    url(r'^down_vote/', down_vote, name='down_vote'),
+    url(r'^get_word/', get_word, name='get_word'),
+    url(r'^', home, name='index'),
 ]

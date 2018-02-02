@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Home Page{% endblock %}</title>
-    {% load static %}
-    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'pictionary.css' %}" rel="stylesheet">
-    {% block extra_css %}{% endblock %}
-</head>
-<body ng-app="pictionaryApp" ng-controller="pictionaryController">
+{% extends 'base.html' %}
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="/pictionary/audience/">Audience</a></li>
-      <li><a href="/pictionary/player/">Player</a></li>
-    </ul>
-  </div>
-</nav>
+{% block title %}Pictionary{% endblock %}
 
-{% block body %}{% endblock %}
-
-<script src="{% static 'angular/angular.min.js' %}"></script>
-<script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-<script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'pictionary.js' %}"></script>
-
-</body>
-</html>
+{% block leftnav %}
+    <h3>Links</h3>
+    <div id="outline" class="list-group">
+        <a class="list-group-item" href="{% url 'pictionary:audience' %}">
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="glyphicon glyphicon-user"></span>
+            Audience Mode
+        </a>
+        <a class="list-group-item" href="{% url 'pictionary:player' %}">
+            <span class="glyphicon glyphicon-user"></span>
+            Player Mode
+        </a>
+    </div>
+{% endblock %}

@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'cv.apps.CvConfig',
     'consulting.apps.ConsultingConfig',
     'family.apps.FamilyConfig',
-    'other.apps.OtherConfig',
     'pictionary',
 ]
 
